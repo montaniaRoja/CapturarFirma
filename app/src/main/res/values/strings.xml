@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CapturarFirma</string>
+    <string name="Respuesta">Se gurado la firma</string>
+    <string name="ErrorResp">Error al guardar la firma</string>
 </resources>

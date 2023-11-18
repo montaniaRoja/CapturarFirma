@@ -1,6 +1,8 @@
 package com.example.capturarfirma;
 
+
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
@@ -56,4 +58,18 @@ public class SignatureView extends View {
     public Path getSignature() {
         return path;
     }
+
+    public Bitmap getBitmap() {
+
+        Bitmap signatureBitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
+
+        // Crear un Canvas para dibujar en el Bitmap
+        Canvas canvas = new Canvas(signatureBitmap);
+
+        // Dibujar la Path en el Canvas
+        canvas.drawPath(path, paint);
+
+        return signatureBitmap;
+    }
+
 }
