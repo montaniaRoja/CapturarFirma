@@ -17,7 +17,7 @@ import java.io.ByteArrayOutputStream;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnGuardar;
+    Button btnGuardar, btnLista;
     SignatureView signatureView;
     EditText txtName;
 
@@ -27,8 +27,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         signatureView=findViewById(R.id.signatureView);
         btnGuardar = (Button) findViewById(R.id.btnGuardar);
+        btnLista = (Button) findViewById(R.id.btnLista);
         txtName=findViewById(R.id.txtName);
         btnGuardar.setOnClickListener(v -> guardarFirma());
+        btnLista.setOnClickListener(v -> verLista());
+
+    }
+
+    private void verLista() {
+        iniciarNuevoActivity();
     }
 
     private void guardarFirma() {
@@ -49,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
             if (resultado > 0) {
                 Toast.makeText(this, getString(R.string.Respuesta), Toast.LENGTH_SHORT).show();
                 signatureView.clear();
-                iniciarNuevoActivity();
+                txtName.setText("");
+
             } else {
                 Toast.makeText(this, getString(R.string.ErrorResp), Toast.LENGTH_SHORT).show();
             }
