@@ -117,7 +117,7 @@ public class ListaFirmas extends AppCompatActivity {
         for (int i = 0; i < listFirmas.size(); i++) {
             arregloFirmas.add(listFirmas.get(i).getId() + "-" +
                     listFirmas.get(i).getNombre() + "**" +
-                    "Tamaño de la firma: " + listFirmas.get(i).getFirma().length);
+                     listFirmas.get(i).getFirma().length);
         }
     }
 
